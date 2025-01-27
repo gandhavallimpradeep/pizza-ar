@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Pizza Preview</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0; /* Light background color */
+        }
+
+        a-scene {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .ar-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            z-index: 999;
+        }
+
+        a-light {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <!-- AR Scene -->
+    <a-scene embedded arjs>
+        <!-- Marker to detect AR content -->
+        <a-marker preset="hiro">
+            <!-- 3D Pizza Model -->
+            <a-entity position="0 0 0" scale="1 1 1" rotation="0 0 0" gltf-model="https://gandhavallimpradeep.github.io/pizza-ar/"></a-entity>
+        </a-marker>
+
+        <!-- Camera -->
+        <a-entity camera></a-entity>
+
+        <!-- Optional Lighting -->
+        <a-light type="directional" position="2 4 -3" intensity="0.5"></a-light>
+    </a-scene>
+
+   
+</body>
+</html>
+
